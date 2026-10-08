@@ -335,3 +335,13 @@ def build_initial_state() -> dict[str, Any]:
         "next_item_id": 15,
         "next_rental_id": len(rentals) + 1,
     }
+
+
+def init_state() -> None:
+    """Initialize session state from seed data. Guarded: runs only once."""
+    import streamlit as st
+    if "initialized" not in st.session_state:
+        state = build_initial_state()
+        for k, v in state.items():
+            st.session_state[k] = v
+

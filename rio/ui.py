@@ -33,7 +33,7 @@ CUSTOM_CSS = """
     /* Tighter top padding */
     .block-container { padding-top: 1.5rem !important; }
 
-    /* Hide Streamlit menu & footer */
+    /* Hide Streamlit default menu & footer, but allow custom blocks */
     #MainMenu { visibility: hidden; }
     footer { visibility: hidden; }
     header { visibility: hidden; }
@@ -41,6 +41,21 @@ CUSTOM_CSS = """
     /* Rounded cards */
     div[data-testid="stVerticalBlock"] > div[data-testid="stHorizontalBlock"] {
         gap: 0.75rem;
+    }
+
+    /* Container max-width constraint for readable reading width */
+    .rio-content-container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* Interactive hover lift */
+    div[data-testid="stVerticalBlock"] > div[data-testid="stContainer"] {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    div[data-testid="stVerticalBlock"] > div[data-testid="stContainer"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(249, 115, 22, 0.08);
     }
 
     /* Badge pills */
@@ -86,6 +101,207 @@ CUSTOM_CSS = """
         font-size: 0.85rem; color: #431407;
     }
     .summary-value { font-weight: 700; color: #F97316; }
+
+    /* Mock hero card */
+    .hero-mock-card {
+        background: #FFFFFF;
+        border: 1px solid #FED7AA;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.12), 0 8px 10px -6px rgba(249, 115, 22, 0.08);
+        transition: transform 0.2s ease;
+    }
+    .hero-mock-card:hover {
+        transform: translateY(-3px);
+    }
+    .mock-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+    }
+    .mock-category-tag {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #C2410C;
+        background: #FFEDD5;
+        padding: 3px 8px;
+        border-radius: 6px;
+    }
+    .mock-card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1F2937;
+        margin-bottom: 0.25rem;
+    }
+    .mock-card-location {
+        font-size: 0.85rem;
+        color: #4B5563;
+        margin-bottom: 1rem;
+    }
+    .mock-card-pricing {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+    .mock-price-current {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #EA580C;
+    }
+    .mock-price-original {
+        font-size: 1.1rem;
+        color: #9CA3AF;
+        text-decoration: line-through;
+    }
+    .mock-floor-tag {
+        font-size: 0.8rem;
+        color: #047857;
+        background: #DEF7EC;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: 600;
+    }
+    .mock-decay-bar {
+        background: #F3F4F6;
+        height: 8px;
+        border-radius: 9999px;
+        overflow: hidden;
+        margin-bottom: 0.75rem;
+    }
+    .mock-decay-fill {
+        background: linear-gradient(90deg, #F97316, #EA580C);
+        height: 100%;
+        border-radius: 9999px;
+    }
+    .mock-card-footer {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.82rem;
+        color: #6B7280;
+        margin-bottom: 0.75rem;
+    }
+    .mock-card-note {
+        font-size: 0.8rem;
+        color: #9A3412;
+        background: #FFF7ED;
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px dashed #FDBA74;
+        text-align: center;
+    }
+
+    /* 3-step cards */
+    .rio-step-card {
+        background: #FFFFFF;
+        border: 1px solid #E5E7EB;
+        border-radius: 12px;
+        padding: 1.25rem;
+        height: 100%;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .rio-step-card:hover {
+        transform: translateY(-2px);
+        border-color: #FDBA74;
+    }
+    .rio-step-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .rio-step-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1F2937;
+        margin-bottom: 0.35rem;
+    }
+    .rio-step-text {
+        font-size: 0.9rem;
+        color: #4B5563;
+        line-height: 1.45;
+    }
+
+    /* Lifecycle chain */
+    .lifecycle-chain-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 1rem;
+        background: #FFF7ED;
+        border: 1px solid #FED7AA;
+        border-radius: 12px;
+        margin: 1rem 0;
+    }
+    .lifecycle-step {
+        display: flex;
+        align-items: center;
+    }
+    .lifecycle-pill {
+        background: #FFFFFF;
+        color: #9A3412;
+        border: 1px solid #FDBA74;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .lifecycle-pill .subtext {
+        font-size: 0.78rem;
+        color: #C2410C;
+        font-weight: 500;
+    }
+    .lifecycle-arrow {
+        color: #EA580C;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    /* Credit block */
+    .rio-credit-card {
+        background: #FFFFFF;
+        border: 1px solid #FED7AA;
+        border-radius: 16px;
+        padding: 1.75rem;
+        text-align: center;
+        margin: 2.5rem auto 1.5rem auto;
+        max-width: 650px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .rio-credit-heart {
+        font-size: 1.75rem;
+        margin-bottom: 0.25rem;
+    }
+    .rio-credit-heading {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #1F2937;
+        margin-bottom: 0.35rem;
+    }
+    .rio-credit-sub {
+        font-size: 0.95rem;
+        color: #4B5563;
+        margin-bottom: 0.6rem;
+    }
+    .rio-credit-names {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #EA580C;
+        margin-bottom: 0.75rem;
+    }
+    .rio-credit-names span {
+        padding: 0 4px;
+    }
+    .rio-credit-note {
+        font-size: 0.78rem;
+        color: #9CA3AF;
+        border-top: 1px solid #F3F4F6;
+        padding-top: 0.5rem;
+        margin-top: 0.5rem;
+    }
 </style>
 """
 
@@ -403,3 +619,209 @@ def render_summary_strip(items: list[dict], rentals: list[dict],
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
+
+
+# ── Landing & Multipage Shared Helpers ─────────────────────────────────────
+
+PILL_STYLES = {
+    "green": ("#DEF7EC", "#03543F", "#BCF0DA"),
+    "amber": ("#FEF3C7", "#92400E", "#FDE68A"),
+    "orange": ("#FFEDD5", "#C2410C", "#FED7AA"),
+    "red": ("#FEE2E2", "#991B1B", "#FECACA"),
+    "grey": ("#F3F4F6", "#374151", "#E5E7EB"),
+    "blue": ("#DBEAFE", "#1E40AF", "#BFDBFE"),
+}
+
+
+def pill(text: str, kind: str = "green") -> str:
+    """Render a colored pill badge (green, amber, red, grey, blue, orange)."""
+    bg, fg, border = PILL_STYLES.get(kind, PILL_STYLES["green"])
+    return (
+        f'<span style="display:inline-block; padding:3px 10px; border-radius:9999px; '
+        f'font-size:0.75rem; font-weight:600; background:{bg}; color:{fg}; '
+        f'border:1px solid {border}; margin:2px 4px 2px 0;">{text}</span>'
+    )
+
+
+def hero_card_html() -> str:
+    """Mock item card for landing page hero visual."""
+    return """
+    <div class="hero-mock-card">
+        <div class="mock-card-header">
+            <span class="mock-category-tag">🌬️ Air cooler</span>
+            <span class="badge badge-dropping">DROPPING</span>
+        </div>
+        <div class="mock-card-title">Symphony 35L Desert Air Cooler</div>
+        <div class="mock-card-location">📍 Hostel Block B &middot; Room 304</div>
+        <div class="mock-card-pricing">
+            <span class="mock-price-current">₹645</span>
+            <span class="mock-price-original">₹1,800</span>
+            <span class="mock-floor-tag">Floor: ₹500</span>
+        </div>
+        <div class="mock-decay-bar">
+            <div class="mock-decay-fill" style="width: 88%;"></div>
+        </div>
+        <div class="mock-card-footer">
+            <span>⏱ 18h to departure</span>
+            <span>👀 7 watching</span>
+        </div>
+        <div class="mock-card-note">
+            🛡️ In-situ handover &middot; Stays in room &middot; Zero haulage
+        </div>
+    </div>
+    """
+
+
+def step_card(icon: str, title: str, text: str) -> str:
+    """Render a 3-step feature card HTML."""
+    return f"""
+    <div class="rio-step-card">
+        <div class="rio-step-icon">{icon}</div>
+        <div class="rio-step-title">{title}</div>
+        <div class="rio-step-text">{text}</div>
+    </div>
+    """
+
+
+def lifecycle_chain_html() -> str:
+    """Render the rent-to-own visual lifecycle chain."""
+    return """
+    <div class="lifecycle-chain-container">
+        <div class="lifecycle-step">
+            <span class="lifecycle-pill">🔑 Rent</span>
+        </div>
+        <div class="lifecycle-arrow">&rarr;</div>
+        <div class="lifecycle-step">
+            <span class="lifecycle-pill">🏠 Convert to buy <span class="subtext">(50% rent credit)</span></span>
+        </div>
+        <div class="lifecycle-arrow">&rarr;</div>
+        <div class="lifecycle-step">
+            <span class="lifecycle-pill">📉 Dutch Auction</span>
+        </div>
+        <div class="lifecycle-arrow">&rarr;</div>
+        <div class="lifecycle-step">
+            <span class="lifecycle-pill">🛡️ Staff Welfare</span>
+        </div>
+    </div>
+    """
+
+
+def credit_block_html() -> str:
+    """Render the thank-you and team credit block required in section 7."""
+    return """
+    <div class="rio-credit-card">
+        <div class="rio-credit-heart">♻️</div>
+        <div class="rio-credit-heading">Thank you for reviewing RIO.</div>
+        <div class="rio-credit-sub">
+            Built with care by <strong>Team RIO</strong> &middot; <strong>Sharda University</strong>
+        </div>
+        <div class="rio-credit-names">
+            <span>Raj</span> &middot;
+            <span>Siddhanth</span> &middot;
+            <span>Charu</span> &middot;
+            <span>Varun</span> &middot;
+            <span>Siya</span>
+        </div>
+        <div class="rio-credit-note">Prototype: simulated data and payments.</div>
+    </div>
+    """
+
+
+def auction_curve_figure(
+    item: dict | None = None,
+    alpha: float = 1.0,
+    height: int = 380,
+) -> go.Figure:
+    """Generate a Plotly line chart of the Dutch auction decay curve for an item.
+
+    Defaults to the sample cooler (start ₹1,800, floor ₹500, departure 168h).
+    Marks floor line, floor-reached point (departure - 2h), and staff cutoff (departure - 1h).
+    """
+    if item is None:
+        start_p = 1800.0
+        floor_p = 500.0
+        listed_h = 0
+        dep_h = 168
+        title_str = "Dutch Auction Price Decay (Sample 35L Cooler)"
+    else:
+        start_p = float(item["start_price"])
+        floor_p = float(item["floor_price"])
+        listed_h = int(item.get("listed_hour", 0))
+        dep_h = int(item.get("departure_hour", 168))
+        title_str = f"Auction Price Decay: {item.get('title', 'Item')}"
+
+    hours = list(range(listed_h, dep_h + 1))
+    prices = [
+        dutch_price(start_p, floor_p, listed_h, dep_h, h, alpha)
+        for h in hours
+    ]
+
+    fig = go.Figure()
+
+    # Main decay curve
+    fig.add_trace(go.Scatter(
+        x=hours,
+        y=prices,
+        mode="lines",
+        name="Price (₹)",
+        line=dict(color="#F97316", width=3),
+        hovertemplate="Hour %{x}<br>Price: ₹%{y:,.0f}<extra></extra>",
+    ))
+
+    # Floor line (horizontal)
+    fig.add_hline(
+        y=floor_p,
+        line_dash="dot",
+        line_color="#10B981",
+        line_width=1.5,
+        annotation_text=f"Floor: {fmt_inr(floor_p)}",
+        annotation_position="bottom right",
+        annotation_font=dict(size=11, color="#047857"),
+    )
+
+    # Floor reached line (dep_h - 2)
+    floor_reach_h = dep_h - 2
+    if floor_reach_h >= listed_h:
+        fig.add_vline(
+            x=floor_reach_h,
+            line_dash="dash",
+            line_color="#6B7280",
+            line_width=1.2,
+            annotation_text=f"Hits floor ({floor_reach_h}h)",
+            annotation_position="top left",
+            annotation_font=dict(size=10, color="#4B5563"),
+        )
+
+    # Staff cutoff line (dep_h - 1)
+    staff_cutoff_h = dep_h - 1
+    if staff_cutoff_h >= listed_h:
+        fig.add_vline(
+            x=staff_cutoff_h,
+            line_dash="dash",
+            line_color="#EF4444",
+            line_width=1.5,
+            annotation_text=f"Staff cutoff ({staff_cutoff_h}h)",
+            annotation_position="bottom left",
+            annotation_font=dict(size=10, color="#DC2626"),
+        )
+
+    fig.update_layout(
+        title=dict(text=title_str, font=dict(size=14, color="#431407")),
+        xaxis=dict(
+            title="Hours since listing",
+            gridcolor="#F3F4F6",
+            zeroline=False,
+        ),
+        yaxis=dict(
+            title="Price (₹)",
+            gridcolor="#F3F4F6",
+            zeroline=False,
+        ),
+        plot_bgcolor="#FFFFFF",
+        paper_bgcolor="rgba(0,0,0,0)",
+        height=height,
+        margin=dict(l=40, r=40, t=50, b=40),
+        hovermode="x unified",
+    )
+    return fig
+
