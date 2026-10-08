@@ -70,35 +70,32 @@ st.markdown(
     "stairway haulage, and storage locker fees."
 )
 
-st.markdown(
-    """
-    <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
-        <h4 style="color: #1F2937; margin-top: 0;">Pathway A: Year-Round Rental Loop</h4>
-        <div style="font-family: monospace; font-size: 0.95rem; color: #1E40AF; background: #EFF6FF; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #3B82F6;">
-            [Listed in Room] &rarr; [Rented by Peer] &rarr; [Returned with Inspection] &rarr; [Active in Room]
-        </div>
-        <p style="color: #4B5563; font-size: 0.88rem; margin: 0.5rem 0 1.25rem 0;">
-            Students living in the same or nearby rooms rent coolers, tables, and kettles for days, weeks, or months with a 20% refundable deposit.
-        </p>
-
-        <h4 style="color: #1F2937;">Pathway B: In-Situ Ownership Transfer (Escrow & QR)</h4>
-        <div style="font-family: monospace; font-size: 0.95rem; color: #9A3412; background: #FFF7ED; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #F97316;">
-            [Listed in Room] &rarr; [Claimed & Held in Escrow] &rarr; [Incoming Student QR Scan] &rarr; [Escrow Released to Seller]
-        </div>
-        <p style="color: #4B5563; font-size: 0.88rem; margin: 0.5rem 0 1.25rem 0;">
-            The buyer claims the item at the Dutch price. Funds are secured in escrow until the incoming occupant enters the room and scans the item's QR code.
-        </p>
-
-        <h4 style="color: #1F2937;">Pathway C: Guaranteed Liquidation (Zero Landfill)</h4>
-        <div style="font-family: monospace; font-size: 0.95rem; color: #065F46; background: #ECFDF5; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #10B981;">
-            [Unsold at Departure &minus; 1h] &rarr; [Staff Welfare Pool] &rarr; [Warden Custody Approval] &rarr; [Housekeeping Staff Gift]
-        </div>
-        <p style="color: #4B5563; font-size: 0.88rem; margin: 0.5rem 0 0 0;">
-            Zero items end up in municipal landfills or hostel junkyards. Campus support staff receive working appliances for their quarters.
-        </p>
+st.html(
+    """<div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+    <h4 style="color: #1F2937; margin-top: 0; font-size: 1.15rem; font-weight: 700;">Pathway A: Year-Round Rental Loop</h4>
+    <div style="font-family: monospace; font-size: 0.95rem; color: #1E40AF; background: #EFF6FF; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #3B82F6; margin-bottom: 0.5rem;">
+        [Listed in Room] &rarr; [Rented by Peer] &rarr; [Returned with Inspection] &rarr; [Active in Room]
     </div>
-    """,
-    unsafe_allow_html=True,
+    <p style="color: #4B5563; font-size: 0.9rem; margin: 0.5rem 0 1.25rem 0;">
+        Students living in the same or nearby rooms rent coolers, tables, and kettles for days, weeks, or months with a 20% refundable deposit.
+    </p>
+
+    <h4 style="color: #1F2937; font-size: 1.15rem; font-weight: 700;">Pathway B: In-Situ Ownership Transfer (Escrow & QR)</h4>
+    <div style="font-family: monospace; font-size: 0.95rem; color: #9A3412; background: #FFF7ED; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #F97316; margin-bottom: 0.5rem;">
+        [Listed in Room] &rarr; [Claimed & Held in Escrow] &rarr; [Incoming Student QR Scan] &rarr; [Escrow Released to Seller]
+    </div>
+    <p style="color: #4B5563; font-size: 0.9rem; margin: 0.5rem 0 1.25rem 0;">
+        The buyer claims the item at the Dutch price. Funds are secured in escrow until the incoming occupant enters the room and scans the item's QR code.
+    </p>
+
+    <h4 style="color: #1F2937; font-size: 1.15rem; font-weight: 700;">Pathway C: Guaranteed Liquidation (Zero Landfill)</h4>
+    <div style="font-family: monospace; font-size: 0.95rem; color: #065F46; background: #ECFDF5; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #10B981; margin-bottom: 0.5rem;">
+        [Unsold at Departure &minus; 1h] &rarr; [Staff Welfare Pool] &rarr; [Warden Custody Approval] &rarr; [Housekeeping Staff Gift]
+    </div>
+    <p style="color: #4B5563; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+        Zero items end up in municipal landfills or hostel junkyards. Campus support staff receive working appliances for their quarters.
+    </p>
+</div>"""
 )
 
 st.divider()

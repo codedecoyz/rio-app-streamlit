@@ -5,6 +5,7 @@ RIO UI — card renderers, CSS injection, badge helpers, chart builders, fmt_inr
 from __future__ import annotations
 
 import io
+import textwrap
 from typing import Any, Optional
 
 import streamlit as st
@@ -645,7 +646,7 @@ def pill(text: str, kind: str = "green") -> str:
 
 def hero_card_html() -> str:
     """Mock item card for landing page hero visual."""
-    return """
+    return textwrap.dedent("""
     <div class="hero-mock-card">
         <div class="mock-card-header">
             <span class="mock-category-tag">🌬️ Air cooler</span>
@@ -669,23 +670,23 @@ def hero_card_html() -> str:
             🛡️ In-situ handover &middot; Stays in room &middot; Zero haulage
         </div>
     </div>
-    """
+    """).strip()
 
 
 def step_card(icon: str, title: str, text: str) -> str:
     """Render a 3-step feature card HTML."""
-    return f"""
+    return textwrap.dedent(f"""
     <div class="rio-step-card">
         <div class="rio-step-icon">{icon}</div>
         <div class="rio-step-title">{title}</div>
         <div class="rio-step-text">{text}</div>
     </div>
-    """
+    """).strip()
 
 
 def lifecycle_chain_html() -> str:
     """Render the rent-to-own visual lifecycle chain."""
-    return """
+    return textwrap.dedent("""
     <div class="lifecycle-chain-container">
         <div class="lifecycle-step">
             <span class="lifecycle-pill">🔑 Rent</span>
@@ -703,12 +704,12 @@ def lifecycle_chain_html() -> str:
             <span class="lifecycle-pill">🛡️ Staff Welfare</span>
         </div>
     </div>
-    """
+    """).strip()
 
 
 def credit_block_html() -> str:
     """Render the thank-you and team credit block required in section 7."""
-    return """
+    return textwrap.dedent("""
     <div class="rio-credit-card">
         <div class="rio-credit-heart">♻️</div>
         <div class="rio-credit-heading">Thank you for reviewing RIO.</div>
@@ -724,7 +725,7 @@ def credit_block_html() -> str:
         </div>
         <div class="rio-credit-note">Prototype: simulated data and payments.</div>
     </div>
-    """
+    """).strip()
 
 
 def auction_curve_figure(
