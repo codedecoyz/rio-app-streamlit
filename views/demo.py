@@ -931,6 +931,18 @@ with tab_dashboard:
                         st.session_state["no_dues"][sname] = False
 
 
+# ── Page Navigation ────────────────────────────────────────────────────────
+st.divider()
+st.markdown("#### 🧭 Quick Navigation")
+nav_col1, nav_col2, nav_col3 = st.columns(3)
+with nav_col1:
+    st.page_link("views/landing.py", label="← Back to Home", icon="🏠", use_container_width=True)
+with nav_col2:
+    st.page_link("views/how_it_works.py", label="See How It Works →", icon="📈", use_container_width=True)
+with nav_col3:
+    st.page_link("views/team.py", label="Team & Roadmap →", icon="👥", use_container_width=True)
+
+
 # ── Footer ─────────────────────────────────────────────────────────────────
 st.markdown(
     '<div class="proto-footer">'

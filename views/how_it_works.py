@@ -159,11 +159,18 @@ with st.expander("🌱 Impact Math & Carbon Methodology (Click to expand)", expa
 st.markdown("<br>", unsafe_allow_html=True)
 
 
-# ── Link to Demo ───────────────────────────────────────────────────────────
-demo_link_col1, demo_link_col2, demo_link_col3 = st.columns([1, 1.5, 1])
-with demo_link_col2:
-    st.page_link("views/demo.py", label="Test this live in the Demo →", icon="🚀", use_container_width=True)
+# ── Page Navigation ────────────────────────────────────────────────────────
+st.markdown("---")
+st.markdown("#### 🧭 Quick Navigation")
+nav_col1, nav_col2, nav_col3 = st.columns(3)
+with nav_col1:
+    st.page_link("views/landing.py", label="← Back to Home", icon="🏠", use_container_width=True)
+with nav_col2:
+    st.page_link("views/demo.py", label="Test Live in Demo →", icon="🛠️", use_container_width=True)
+with nav_col3:
+    st.page_link("views/team.py", label="Team & Roadmap →", icon="👥", use_container_width=True)
 
+st.markdown("<br>", unsafe_allow_html=True)
 st.markdown(credit_block_html(), unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)

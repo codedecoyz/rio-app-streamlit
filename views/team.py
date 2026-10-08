@@ -153,8 +153,18 @@ with st.expander("Is this using real payments?"):
         "No real bank accounts, credit cards, or UPI IDs are connected."
     )
 
-st.markdown("<br>", unsafe_allow_html=True)
+# ── Page Navigation ────────────────────────────────────────────────────────
+st.markdown("---")
+st.markdown("#### 🧭 Quick Navigation")
+nav_col1, nav_col2, nav_col3 = st.columns(3)
+with nav_col1:
+    st.page_link("views/landing.py", label="← Back to Home", icon="🏠", use_container_width=True)
+with nav_col2:
+    st.page_link("views/how_it_works.py", label="← How It Works", icon="📈", use_container_width=True)
+with nav_col3:
+    st.page_link("views/demo.py", label="Try the Live Demo →", icon="🛠️", use_container_width=True)
 
+st.markdown("<br>", unsafe_allow_html=True)
 st.markdown(credit_block_html(), unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)

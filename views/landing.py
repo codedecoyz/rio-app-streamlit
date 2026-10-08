@@ -185,17 +185,23 @@ st.markdown("<br><br>", unsafe_allow_html=True)
 
 
 # ── 4.8 Closing Call to Action & Credit Footer ─────────────────────────────
-cta_col1, cta_col2, cta_col3 = st.columns([1, 1.5, 1])
-with cta_col2:
-    st.markdown(
-        "<div style='text-align: center; margin-bottom: 0.5rem;'>"
-        "<h3 style='margin-bottom: 0.25rem;'>Ready to see it work?</h3>"
-        "<p style='color: #6B7280; font-size: 0.95rem;'>Experience the live simulation with student wallets and warden clearance.</p>"
-        "</div>",
-        unsafe_allow_html=True,
-    )
-    st.page_link("views/demo.py", label="Try the live demo →", icon="🚀", use_container_width=True)
+st.markdown(
+    "<div style='text-align: center; margin-bottom: 1rem;'>"
+    "<h3 style='margin-bottom: 0.25rem;'>Ready to explore?</h3>"
+    "<p style='color: #6B7280; font-size: 0.95rem;'>Experience the live simulation, review the auction mechanics, or meet the team.</p>"
+    "</div>",
+    unsafe_allow_html=True,
+)
 
+nav_col1, nav_col2, nav_col3 = st.columns(3)
+with nav_col1:
+    st.page_link("views/demo.py", label="Try the Live Demo →", icon="🛠️", use_container_width=True)
+with nav_col2:
+    st.page_link("views/how_it_works.py", label="How It Works →", icon="📈", use_container_width=True)
+with nav_col3:
+    st.page_link("views/team.py", label="Team & Roadmap →", icon="👥", use_container_width=True)
+
+st.markdown("<br>", unsafe_allow_html=True)
 st.markdown(credit_block_html(), unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
